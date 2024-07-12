@@ -1,0 +1,55 @@
+local OrionLib = loadstring(game:HttpGet(('https://raw.githubusercontent.com/shlexware/Orion/main/source')))()
+
+local Window = OrionLib:MakeWindow({Name = "MISA HUB", HidePremium = false, SaveConfig = false, ConfigFolder = "asdsahgjasdhkgjbdsa"})
+local resume = coroutine.resume
+local create = coroutine.create
+
+OrionLib:MakeNotification({
+	Name = "LOGGINED IN!!!",
+	Content = "Welcome to MISA HUB",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+OrionLib:MakeNotification({
+	Name = "THANK YOU VERY MUCH",
+	Content = "Thank you for trusting and using my products ❤",
+	Image = "rbxassetid://4483345998",
+	Time = 5
+})
+
+
+
+local Tab = Window:MakeTab({
+	Name = "Main",
+	Icon = "rbxassetid://6026568198",
+	PremiumOnly = false
+})
+
+Tab:AddToggle({Name = "Auto Open Box",Default = false,Callback = function(concac)
+    getgenv().Save["Openbox"] = t
+    if getgenv().Save["AutoSave"] then
+        SaveSetting()
+    end
+end})
+
+spawn(function()
+    pcall(function()
+        while true do wait()
+            pcall(function()
+                if getgenv().Save["Openbox"] then
+                    for i,v in pairs(game.Players.LocalPlayer.Backpack:GetChildren()) do
+                        if string.find(v.Name, "Common Box") or string.find(v.Name, "Uncommon Box") then
+                            equipbox()
+                        end
+                    end
+                    for i,v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+                        if string.find(v.Name, "Common Box") or string.find(v.Name, "Uncommon Box") then
+                            usebox()
+                        end
+                    end
+                end
+            end)
+        end
+    end)
+end)
