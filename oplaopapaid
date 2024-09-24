@@ -14,7 +14,7 @@ if game.PlaceId == 8569358381 then
         Duration = 10
     })
     wait()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/TuanKhai1703/momfat/main/opakey'))() 
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/TuanKhai1703/momfat/refs/heads/main/um'))() 
 elseif game.PlaceId == 3237168 then
     game.StarterGui:SetCore("SendNotification", {
         Title = "Note",
@@ -23,7 +23,7 @@ elseif game.PlaceId == 3237168 then
         Duration = 10
     })
     wait()
-    loadstring(game:HttpGet('https://raw.githubusercontent.com/TuanKhai1703/momfat/refs/heads/main/um2'))()
+    loadstring(game:HttpGet('https://raw.githubusercontent.com/TuanKhai1703/momfat/refs/heads/main/um'))()
 else
     wait(1)
     game.StarterGui:SetCore("SendNotification", {
